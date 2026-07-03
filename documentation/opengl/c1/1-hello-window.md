@@ -183,6 +183,10 @@ for (int i = 0; i < input.Keyboards.Count; i++)
     input.Keyboards[i].KeyDown += KeyDown;
 ```
 
+> [!NOTE]
+> Make sure that the code above is inside the `OnLoad` method. If you add it to `OnUpdate` or `OnRender`, this program will not work, because input needs to be created in the same method that it's used.
+
+
 Sometimes, an input context supports multiple keyboards connected to the host device. In those cases, we want to handle when the escape key is pressed on any connected keyboard, so we subscribe to the event for every keyboard that is connected.
 
 We've now subcribed to the event, try adding some logs in your `KeyDown` method and see what results you get.
